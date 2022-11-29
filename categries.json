@@ -1,15 +1,19 @@
 [
     {
         "category_id":"1",
-        "name":"Samsung"
+        "name":"Samsung",
+        "image":"https://www.futurezone.de/wp-content/uploads/sites/11/2021/09/samsung-unpacked.jpg?w=1200"
         
     },
     {
         "category_id":"2",
-        "name":"Iphone"
+        "name":"Iphone",
+        "image":"https://www.freepnglogos.com/uploads/apple-iphone-logo-png-1.png"
     },
     {
         "category_id":"3",
-        "name":"xiaomi"
+        "name":"xiaomi",
+        "image":"https://fdn.gsmarena.com/imgroot/news/21/03/xiaomi-new-logo/-1200/gsmarena_004.jpg"
+
     }
 ]
