@@ -21,6 +21,7 @@ try{
     const serviceCollection = client.db('recycleShop').collection('categories')
     const usersCollection = client.db('recycleShop').collection('users')
     const allMobile  = client.db('recycleShop').collection('allMobile')
+    const bookingsCollection  = client.db('recycleShop').collection('bookings')
 
 
 
@@ -79,7 +80,13 @@ try{
         res.status(403).send({ accessToken: '' })
     });
 
-
+    // bookings 
+            app.post('/bookings',async(req,res)=>{
+                const booking = req.body 
+                console.log(booking)
+                const result = await bookingsCollection.insertOne(booking)
+                res.send(result)
+            })
     //users
     app.post('/users', async (req, res) => {
         const user = req.body;
@@ -122,4 +129,4 @@ app.get('/', async (req, res) => {
     res.send('recycle shop server is running');
 })
 
-app.listen(port, () => console.log(`Doctors portal running on ${port}`))
+app.listen(port, () => console.log(`Recycle shop  running on ${port}`))
