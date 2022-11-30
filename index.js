@@ -33,6 +33,20 @@ try{
    
 
 
+    //Review Part email
+    app.get('/emaila', async (req, res) => {
+        let query = {};
+
+        if (req.query.email) {
+            query = {
+                email: req.query.email
+            }
+        }
+        const cursor = usersCollection.find(query);
+        const review = await cursor.toArray();
+        res.send(review);
+    });
+
 
     //new
     app.post('/allmobile', async (req, res) => {
@@ -101,7 +115,7 @@ try{
         const options = { upsert: true };
         const updatedDoc = {
             $set: {
-                role: 'verified-seller'
+                newRole: 'verified-seller'
             }
         }
         const result = await usersCollection.updateOne(filter, updatedDoc, options);
@@ -113,6 +127,26 @@ try{
         const users = await usersCollection.find(query).toArray();
         res.send(users);
     });
+    
+    app.get('/AllMobileEmail', async (req, res) => {
+        let query = {};
+
+        if (req.query.email) {
+            query = {
+                email: req.query.email
+            }
+        }
+        const cursor = allMobile.find(query);
+        const review = await cursor.toArray();
+        res.send(review);
+    });
+
+    app.delete('/AllMobileEmail/:id', async (req, res) => {
+        const id = req.params.id;
+        const query = { _id: ObjectId(id) };
+        const result = await allMobile.deleteOne(query);
+        res.send(result);
+    })
 
 
 
