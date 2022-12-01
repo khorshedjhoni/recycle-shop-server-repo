@@ -127,6 +127,11 @@ try{
         const users = await usersCollection.find(query).toArray();
         res.send(users);
     });
+    // app.get('/users/customer', async (req, res) => {
+    //     const query = {};
+    //     const users = await usersCollection.find(query).toArray();
+    //     res.send(users);
+    // });
     
     app.get('/AllMobileEmail', async (req, res) => {
         let query = {};
