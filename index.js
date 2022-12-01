@@ -68,6 +68,19 @@ try{
         res.send(service);
     });
 
+    app.put('/allmobile/admin/:id', async (req, res) => {
+        const id = req.params.id;
+        const filter = { _id: ObjectId(id) }
+        const options = { upsert: true };
+        const updatedDoc = {
+            $set: {
+                addV: 'advertise'
+            }
+        }
+        const result = await allMobile.updateOne(filter, updatedDoc, options);
+        res.send(result);
+    });
+
     // revi
     app.get('/reviewss', async (req, res) => {
         let query = {};
