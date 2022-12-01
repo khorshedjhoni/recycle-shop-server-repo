@@ -68,6 +68,7 @@ try{
         res.send(service);
     });
 
+    // review
     app.get('/reviewss', async (req, res) => {
         let query = {};
 
@@ -82,7 +83,7 @@ try{
     });
 
 
-    
+    //jwt
     app.get('/jwt', async (req, res) => {
         const email = req.query.email;
         const query = { email: email };
