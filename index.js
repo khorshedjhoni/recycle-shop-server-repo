@@ -82,7 +82,7 @@ try{
     });
 
 
-    //jwt
+    
     app.get('/jwt', async (req, res) => {
         const email = req.query.email;
         const query = { email: email };
