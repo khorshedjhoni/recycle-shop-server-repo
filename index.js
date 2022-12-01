@@ -68,7 +68,7 @@ try{
         res.send(service);
     });
 
-    // review
+    // revi
     app.get('/reviewss', async (req, res) => {
         let query = {};
 
